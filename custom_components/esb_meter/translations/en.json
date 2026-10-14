@@ -1,0 +1,60 @@
+{
+  "title": "ESB Meter Data",
+  "config": {
+    "step": {
+      "user": {
+        "title": "Connect your ESB Networks account",
+        "description": "Download your meter history automatically. Your credentials remain in Home Assistant.",
+        "data": {
+          "username": "ESB account email",
+          "password": "ESB account password",
+          "mprn": "MPRN (11 digits)",
+          "publish_statistics": "Publish historical import/export statistics"
+        }
+      },
+      "reauth_confirm": {
+        "title": "Reconnect ESB Networks",
+        "data": {
+          "username": "ESB account email",
+          "password": "ESB account password",
+          "mprn": "MPRN (11 digits)",
+          "publish_statistics": "Publish historical import/export statistics"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "ESB rejected the credentials. Check your account details.",
+      "browser_verification_required": "ESB requires browser verification. Sign in on the ESB website and try again later. This integration cannot solve CAPTCHA.",
+      "login_cooldown": "Please wait between login attempts. Allow at least one minute between attempts; after three attempts within 15 minutes, wait for the oldest attempt to expire.",
+      "invalid_meter_id": "Enter an 11-digit MPRN.",
+      "different_meter": "The downloaded meter does not match this configuration.",
+      "cannot_connect": "Could not retrieve valid meter data. Try again later.",
+      "network_error": "Could not reach ESB Networks. Check network access and try later.",
+      "login_page_changed": "The ESB sign-in page was not recognised. Check the HA logs for the safe error code.",
+      "missing_auth_form": "ESB did not complete sign-in. Browser verification or a portal change may be involved.",
+      "session_expired": "ESB did not establish a usable session after login. Try later.",
+      "portal_http_error": "ESB returned an HTTP error. Try later.",
+      "portal_rate_limited": "ESB is limiting requests. Wait before retrying."
+    },
+    "abort": {
+      "already_configured": "This meter is already configured.",
+      "reauth_successful": "Account reconnected."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Meter data options",
+        "data": {
+          "poll_hours": "Download interval (24\u2013168 hours)",
+          "publish_statistics": "Publish historical import/export statistics",
+          "comparison_import": "Reference grid import energy sensor (optional)",
+          "comparison_export": "Reference grid export energy sensor (optional)",
+          "comparison_absolute": "Minimum difference (kWh)",
+          "comparison_percent": "Minimum difference (%)"
+        },
+        "description": "Optional: select cumulative grid import/export energy sensors with recorder history. Comparisons use matching complete Irish days. Positive difference means the reference measured more than ESB. Clear a source to disable its comparison."
+      }
+    }
+  }
+}

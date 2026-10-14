@@ -1,0 +1,22 @@
+# Private meter data and authentication material must never enter Git.
+*.csv
+*.hdf
+*.log
+.env
+.env.*
+!.env.example
+secrets.yaml
+credentials*
+cookies*
+private/
+esb_meter_import/
+.storage/
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+.coverage
+coverage.xml
+htmlcov/
+dist/
+*.egg-info/
